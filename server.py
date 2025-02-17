@@ -6,10 +6,10 @@ PORT = 65432        # Non-privileged port
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
     s.listen()
-    print(f'Server listening on {HOST}:{PORT}')
+    print(f'*** Server listening on {HOST}:{PORT}')
     conn, addr = s.accept()
     with conn:
-        print(f'Connected by {addr}')
+        print(f'*** Connected by {addr}')
         while True:
             data = conn.recv(1024)
             if not data:
